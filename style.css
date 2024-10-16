@@ -804,6 +804,8 @@ color: #0d0396;
     .light::before {
       width: calc(50% + 1px);
       height: 80%;
+      background: conic-gradient(from 90deg at 0% 65%, var(--dark), var(--light));
+
     }
   
     .card {
