@@ -127,34 +127,41 @@ function toggleMenu() {
 
 
 
-function showMore() {
-  // Get all the images in the gallery
-  const images = document.querySelectorAll('#gallery img');
-  
-  // Loop through each image and display them
-  images.forEach(img => {
-      img.style.display = 'inline-block'; // Display the image
-  });
-  
-  // Hide the "Show More" button and display the "Show Less" button
-  document.getElementById('showMoreBtn').style.display = 'none';
-  document.getElementById('showLessBtn').style.display = 'inline-block';
-}
 
-function showLess() {
-  // Get all the images in the gallery
-  const images = document.querySelectorAll('#gallery img');
-  
-  // Hide all images except the first 3
-  images.forEach((img, index) => {
-      if (index < 3) {
-          img.style.display = 'inline-block'; // Display the first 3 images
-      } else {
-          img.style.display = 'none'; // Hide the rest
-      }
-  });
-  
-  // Hide the "Show Less" button and display the "Show More" button
-  document.getElementById('showLessBtn').style.display = 'none';
-  document.getElementById('showMoreBtn').style.display = 'inline-block';
-}
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  const showMoreBtn = document.getElementById('showMoreBtn');
+  const showLessBtn = document.getElementById('showLessBtn');
+
+  // Attach event listeners to the buttons
+  showMoreBtn.addEventListener('click', showMore);
+  showLessBtn.addEventListener('click', showLess);
+
+  function showMore() {
+      const images = document.querySelectorAll('#gallery img');
+      images.forEach(img => {
+          img.style.display = 'inline-block'; // Display all images
+      });
+
+      // Toggle buttons
+      showMoreBtn.style.display = 'none';
+      showLessBtn.style.display = 'inline-block';
+  }
+
+  function showLess() {
+      const images = document.querySelectorAll('#gallery img');
+      images.forEach((img, index) => {
+          if (index < 3) {
+              img.style.display = 'inline-block'; // Show first 3 images
+          } else {
+              img.style.display = 'none'; // Hide the rest
+          }
+      });
+
+      // Toggle buttons
+      showLessBtn.style.display = 'none';
+      showMoreBtn.style.display = 'inline-block';
+  }
+});
