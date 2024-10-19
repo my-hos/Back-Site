@@ -1485,6 +1485,10 @@ height: 350px;
 width: 250px;
 
 }
+    #end-done{
+    display: flex;
+    flex-direction: column;
+  }
 .services .about-content .text p:first-of-type{
 margin-top: 15px;
 transform: translateX(0px);
@@ -1561,3 +1565,8 @@ background: linear-gradient(90deg, #000000, #ffcc00); /* Adjust the colors as ne
 }
 }
 
+
+#end-done{
+  display: flex;
+  flex-direction: column;
+}
