@@ -1259,6 +1259,10 @@ font-weight: 700;
 border-radius: 14px;
 }
 
+#done-1{
+  max-height: 440px;
+}
+
 .madany2 {
 max-height: 140px;
 overflow: hidden; /* Hide the overflowing items */
